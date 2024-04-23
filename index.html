@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>House Price Prediction</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: url('https://www.theoldhag.com/wp-content/uploads/2018/05/house-prices.jpg') center/cover fixed no-repeat;
+            color: #3E2723; /* Dark Brown Text Color */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            position: relative;
+        }
+
+        h1 {
+            color: #5D4037; /* Brown Title Color */
+            text-align: center;
+        }
+
+        form-container {
+            position: relative;
+            max-width: 600px;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: #3E2723; /* Dark Brown Text Color */
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            box-sizing: border-box;
+            border: 1px solid #5D4037; /* Brown Border Color */
+            border-radius: 4px;
+        }
+
+        button {
+            background-color: #3E2723; /* Dark Brown Background Color */
+            color: #fff;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #2E1B16; /* Darker Brown Hover Background Color */
+        }
+
+        .background-watermark {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: repeating-linear-gradient(45deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2) 20px, transparent 20px, transparent 40px);
+            pointer-events: none;
+            z-index: -1;
+        }
+    </style>
+</head>
+
+<body>
+    <form-container>
+        <h1>House Price Prediction</h1>
+        <form action="/predict" method="post">
+            <label for="bathrm">Bathrooms:</label>
+            <input type="text" id="bathrm" name="BATHRM" placeholder="Enter the number of bathrooms" required>
+
+            <label for="bedrm">Bedrooms:</label>
+            <input type="text" id="bedrm" name="BEDRM" placeholder="Enter the number of bedrooms" required>
+
+            <label for="grade">Grade:</label>
+            <input type="text" id="grade" name="GRADE" placeholder="Enter the grade" required>
+
+            <label for="heat">Heating:</label>
+            <input type="text" id="heat" name="HEAT" placeholder="Enter the heating type" required>
+
+            <label for="cndtn">Condition:</label>
+            <input type="text" id="cndtn" name="CNDTN" placeholder="Enter the condition" required>
+
+            <label for="gba">Square Footage:</label>
+            <input type="text" id="gba" name="GBA" placeholder="Enter the square footage" required>
+
+            <label for="days_passed">Days Passed:</label>
+            <input type="text" id="days_passed" name="num_days_passed" placeholder="Enter the days passed" required>
+
+            <button type="submit">Predict</button>
+        </form>
+        <div class="background-watermark"></div>
+    </form-container>
+</body>
+
+</html>
